@@ -5,6 +5,80 @@
 soong_namespace {
 }
 
+cc_prebuilt_library_shared {
+	name: "fm_helium",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/lib/fm_helium.so"],
+		},
+		android_arm64: {
+			srcs: ["proprietary/lib64/fm_helium.so"],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libdiag_system",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/lib/libdiag_system.so"],
+		},
+		android_arm64: {
+			srcs: ["proprietary/lib64/libdiag_system.so"],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "libfm-hci",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["proprietary/lib/libfm-hci.so"],
+		},
+		android_arm64: {
+			srcs: ["proprietary/lib64/libfm-hci.so"],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.qti.hardware.data.cne.internal.constants@1.0",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/product/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so"],
+		},
+	},
+	compile_multilib: "64",
+	check_elf_files: false,
+	prefer: true,
+	product_specific: true,
+}
+
 android_app_import {
 	name: "SoterService",
 	owner: "xiaomi",
